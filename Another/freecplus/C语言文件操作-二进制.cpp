@@ -41,5 +41,22 @@ int main()
 
     fclose(fp);
 
+    FILE *fp1 = 0;
+    fp1 = fopen("book.dat", "r");
+    if (fp1 == 0)
+    {
+        cout << "打开文件失败！" << endl;
+        return -1;
+    }
+
+    while (1)
+    {
+        if (fread(&sgirl, 1, sizeof(struct girl), fp1) == 0) break;
+
+        printf("name = %s, age = %d, height = %d, sc = %s, yz = %s\n",sgirl.name, sgirl.age, sgirl.height, sgirl.sc, sgirl.yz);
+    }
+
+    fclose(fp1);
+
     return 0;
 }
