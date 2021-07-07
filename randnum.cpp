@@ -16,7 +16,7 @@ int cnt = 0;        // cnt为猜的次数
 int main()
 {
     clock_t startTime, endTime;
-    startTime = clock();
+    startTime = clock();        // 开始时间
     srand((unsigned)time(NULL)); // 随机种子根据
     for (int i = 0; i < N; i ++ )
     {
@@ -78,7 +78,7 @@ int main()
             x = 0, y = 0; // 因为一开始的x跟y是全局变量 不初始化第二遍再猜值会延续上一次的
         }
     }
-    endTime = clock();
+    endTime = clock();  // 结束时间
     cout << "一共猜了 " << cnt << " 次" << endl;
     cout << "一共花了 " << (double)(endTime - startTime) / CLOCKS_PER_SEC << " 秒" << endl;
 
